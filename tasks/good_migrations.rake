@@ -13,7 +13,8 @@ namespace :good_migrations do
       extend Module.new {
         puts "exteding module_2"
         def load_file(path, const_paths = loadable_constants_for_path(path))
-          puts path
+          binding.pry
+          puts path + "loading path ###"
           if path.starts_with? File.join(Rails.application.root, 'app')
             raise GoodMigrations::LoadError, <<-ERROR
 Rails attempted to auto-load:
