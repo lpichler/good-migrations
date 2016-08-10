@@ -2,9 +2,10 @@ require 'active_support/dependencies'
 require 'good_migrations'
 
 namespace :good_migrations do
-  task :disable_autoload do
-    puts "GOOD_MIGRATUONS@@@"
+    puts "GOOD_MIGRATUONS_1"
+    puts "GOOD_MIGRATUONS__#{ENV['GOOD_MIGRATIONS']}"
     next if ENV['GOOD_MIGRATIONS'] == "skip"
+    puts "GOOD_MIGRATUONS_2"
     ActiveSupport::Dependencies.class_eval do
       extend Module.new {
         puts "exteding module"
